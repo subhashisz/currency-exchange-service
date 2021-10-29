@@ -17,7 +17,7 @@ public class CircuitBreakerController {
 	@GetMapping("/sample-api")
 	@Retry(name = "failure", fallbackMethod = "errorResponse")
 	public String sampleApi() {
-		logger.info(" Failed sampleApi call ");
+		logger.info(" Failed sampleApi call .....................");
 		ResponseEntity<String> entity = new RestTemplate().getForEntity("http://localhost:9999/error", String.class);
 		return entity.getBody();
 	}

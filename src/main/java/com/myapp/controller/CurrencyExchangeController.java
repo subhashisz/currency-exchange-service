@@ -29,7 +29,8 @@ public class CurrencyExchangeController {
 	@GetMapping("/from/{from}/to/{to}")
 	public CurrencyExchange retrieveExchangeValue(@PathVariable String from, @PathVariable String to) {
 
-		LOGGER.info("Inside retrieveExchangeValue of CurrencyExchangeController...........................");
+		LOGGER.info("method retrieveExchangeValue of "
+				+ "CurrencyExchangeController---from -: {} to -: {} ",from,to);
 		CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
 
 		if (currencyExchange == null) {
